@@ -13,10 +13,11 @@ const Hero = () => {
             Omnimart
           </Heading>
           <Heading
-            level="h2"
+            level="h3"
             className="text-3xl leading-10 text-ui-fg-subtle font-normal"
+            style={{ fontSize: 'small' }}
           >
-            Made by Harshitha, Sathwik , Harshini, Surya Teja
+            Made by HARSHITHA Komati, Sathwik , Harshini, Surya Teja
           </Heading>
         </span>
         <a
