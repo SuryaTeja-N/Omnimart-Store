@@ -132,6 +132,9 @@ const plugins = [
       access_token: process.env.IPSTACK_ACCESS_KEY,
     },
   },
+  {
+    resolve: `medusa-plugin-wishlist`,
+  },
 ];
 
 const modules = {
