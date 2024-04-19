@@ -95,6 +95,43 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: `medusa-plugin-sendgrid`,
+    options: {
+      api_key: process.env.SENDGRID_API_KEY,
+      from: process.env.SENDGRID_FROM,
+      order_placed_template: 
+        process.env.SENDGRID_ORDER_PLACED_ID,
+      localization: {
+        "de-DE": { // locale key
+          order_placed_template:
+            process.env.SENDGRID_ORDER_PLACED_ID_LOCALIZED,
+        },
+      },
+    },
+  },
+  {
+    resolve: `medusa-payment-stripe`,
+    options: {
+      api_key: process.env.STRIPE_API_KEY,
+      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+    },
+  },
+  {
+    resolve: `medusa-fulfillment-manual`,
+  },
+  {
+    resolve: `@medusajs/file-local`,
+    options: {
+      // optional ( and will be stored in uploads/images folder )
+    },
+  },
+  {
+    resolve: `medusa-plugin-ip-lookup`,
+    options: {
+      access_token: process.env.IPSTACK_ACCESS_KEY,
+    },
+  },
 ];
 
 const modules = {
