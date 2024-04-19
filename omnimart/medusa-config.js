@@ -52,10 +52,42 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: `medusa-plugin-algolia`,
+    options: {
+      applicationId: process.env.ALGOLIA_APP_ID,
+      adminApiKey: process.env.ALGOLIA_ADMIN_API_KEY,
+      settings: {
+        // index settings...
+        products: {
+          indexSettings: {
+            searchableAttributes : ["title", "description"],
+            attributesToRetrieve: [
+              "id",
+              "title",
+              "description",
+              "handle",
+              "thumbnail",
+              "variants",
+              "variant_sku",
+              "options",
+              "collection_title",
+              "collection_handle",
+              "images",
+            ],
+          },
+          // transformer: (product) => ({ 
+          //   objectID: product.id, 
+          //   // other attributes...
+          // }),
+        },
+      },
+    },
+  },
 ];
 
 const modules = {
-  /*eventBus: {
+  eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
       redisUrl: REDIS_URL
@@ -66,7 +98,7 @@ const modules = {
     options: {
       redisUrl: REDIS_URL
     }
-  },*/
+  },
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
