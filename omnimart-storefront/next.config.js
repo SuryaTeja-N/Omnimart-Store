@@ -31,18 +31,19 @@ const nextConfig = withStoreConfig({
 
 console.log("next.config.js", JSON.stringify(module.exports, null, 2))
 
-//module.exports = nextConfig  (if not working.. uncomment this and remove below)
+module.exports = nextConfig  
+//(if not working.. uncomment this and remove below)
 
-module.exports = withStoreConfig({
-  // ...
- images: {
-    remotePatterns: [
-      // ...
-      {
-        protocol: "http", // or https
-        hostname:"localhost",
-      },
-      // ...
-    ],
-  },
-})
+// module.exports = withStoreConfig({
+//   // ...
+//  images: {
+//     remotePatterns: [
+//       // ...
+//       {
+//         protocol: "http", // or https
+//         hostname:"localhost",
+//       },
+//       // ...
+//     ],
+//   },
+// })
