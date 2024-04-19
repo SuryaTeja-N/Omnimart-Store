@@ -68,18 +68,29 @@ const plugins = [
               "description",
               "handle",
               "thumbnail",
-              "variants",
-              "variant_sku",
-              "options",
-              "collection_title",
-              "collection_handle",
-              "images",
+              // "variants",
+              // "variant_sku",
+              // "options",
+              // "collection_title",
+              // "collection_handle",
+              // "images",
             ],
           },
-          // transformer: (product) => ({ 
-          //   objectID: product.id, 
-          //   // other attributes...
-          // }),
+          transformer: (product) => { 
+            return {
+              objectID: product.id,
+              title: product.title,
+              handle: product.handle,
+              thumbnail:  product.thumbnail,
+              //subtitle: product.subtitle,
+              //tags: product.tags,
+              description:  product.description,
+              //material: product.material,
+              //metadata: product.metadata, // Keep the original metadata as well if needed
+              //collection_title: product.collection ? item.collection.title : "", // Adjusted to avoid potential undefined access
+              //collection_handle: product.collection ? item.collection.handle : "", // Adjusted to avoid potential undefined access
+            }
+          },
         },
       },
     },
@@ -116,7 +127,11 @@ const projectConfig = {
 module.exports = {
   projectConfig,
   plugins,
-  modules,
+  modules:{
+    eventBus: {
+      resolve: "@medusajs/event-bus-local",
+    }
+  },
   featureFlags: {
     product_categories: true,
   },

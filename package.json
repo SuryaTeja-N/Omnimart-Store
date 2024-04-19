@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@medusajs/event-bus-local": "^1.9.8",
     "@medusajs/utils": "^1.11.8",
     "medusa-plugin-algolia": "^0.2.20",
     "medusa-plugin-meilisearch": "^2.0.10"
