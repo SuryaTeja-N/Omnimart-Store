@@ -53,7 +53,15 @@ export async function logCustomerIn(
       revalidateTag("customer")
     })
   } catch (error: any) {
-    return error.toString()
+    // return error.toString()
+     return "This Email is not in our records, please give valid email"
+    // if (error.message.includes('email')) {
+    //   throw new Error('Given Email is wrong, enter correct mail');
+    // } else if (error.message.includes('password')) {
+    //   throw new Error('Given password is incorrect');
+    // } else {
+    //   throw error;
+    // }
   }
 }
 

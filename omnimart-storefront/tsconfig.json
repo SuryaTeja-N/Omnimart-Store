@@ -15,6 +15,8 @@
     "jsx": "preserve",
     "incremental": true,
     "types": ["cypress"],
+    "experimentalDecorators": true, //delete this if not working
+    "sourceMap": true, //delete this if not working
     "baseUrl": "./src",
     "paths": {
       "@lib/*": ["lib/*"],
