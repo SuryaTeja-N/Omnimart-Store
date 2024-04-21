@@ -17,7 +17,7 @@ const Hero = () => {
             className="text-3xl leading-10 text-ui-fg-subtle font-normal"
             style={{ fontSize: 'small' }}
           >
-            Made by HARSHITHA Komati, Sathwik , Harshini, Surya Teja
+            Made by Harshitha Komati, Sathwik , Harshini, Surya Teja
           </Heading>
         </span>
         <a
